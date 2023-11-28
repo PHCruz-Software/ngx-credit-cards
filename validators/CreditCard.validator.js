@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreditCardValidator = void 0;
 var Payment = require("payment");
 var CreditCardValidator = /** @class */ (function () {
     function CreditCardValidator() {

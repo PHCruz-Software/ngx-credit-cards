@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CCNumberFormatDirective = void 0;
 var core_1 = require("@angular/core");
 var Payment = require("payment");
 var CCNumberFormatDirective = /** @class */ (function () {
@@ -26,7 +27,7 @@ var CCNumberFormatDirective = /** @class */ (function () {
         var elementValue = element.value;
         this.cardType = Payment.fns.cardType(elementValue);
         if (this.cardType !== "") {
-            this.renderer.setElementClass(element, this.cardType, false);
+            this.renderer.removeClass(element, this.cardType);
         }
         else {
             this.cardType = "";
@@ -42,10 +43,9 @@ var CCNumberFormatDirective = /** @class */ (function () {
         core_1.Directive({
             selector: '[ccNum]'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof core_1.Renderer !== "undefined" && core_1.Renderer) === "function" && _a || Object, core_1.ElementRef])
+        __metadata("design:paramtypes", [core_1.Renderer2, core_1.ElementRef])
     ], CCNumberFormatDirective);
     return CCNumberFormatDirective;
-    var _a;
 }());
 exports.CCNumberFormatDirective = CCNumberFormatDirective;
 //# sourceMappingURL=cc-number-format.directive.js.map

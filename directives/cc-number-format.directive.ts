@@ -1,7 +1,7 @@
 import { 
 	Directive, 
 	ElementRef, 
-	Renderer,
+	Renderer2,
 	HostListener
 } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class CCNumberFormatDirective {
 
 	cardType: string;
 
-	constructor(private renderer: Renderer, private el: ElementRef) {
+	constructor(private renderer: Renderer2, private el: ElementRef) {
 
 		let element   = this.el.nativeElement;
 		this.cardType = "";
@@ -33,7 +33,7 @@ export class CCNumberFormatDirective {
 
 		if ( this.cardType !== "" )
 		{	
-			this.renderer.setElementClass(element, this.cardType, false);
+			this.renderer.removeClass(element, this.cardType);
 		}
 		else
 		{
